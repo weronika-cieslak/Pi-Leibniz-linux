@@ -10,6 +10,7 @@ double first;
 double n;
 };
 double value=1;
+pthread_mutex_t lock;
 void* pi_wallis_thread(void *input)
 {   
 
@@ -17,7 +18,7 @@ void* pi_wallis_thread(void *input)
     size++;
     double first=((struct args*)input)->first;
     printf("Thread #%ld size=%2.0f first=%2.0f\n",pthread_self(),size,first);   
-    pthread_mutex_t lock;
+    
     double l=1;
     double m=1;
     double result=1;
